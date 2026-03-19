@@ -9,6 +9,7 @@ A Windows Batch script that toggles between **Balanced** and **Ultimate Performa
 ## 📋 Table of Contents
 
 - [Quick Start](#quick-start)
+- [Setup Instructions](#setup-instructions)
 - [Features](#features)
 - [Requirements](#requirements)
 - [Installation](#installation)
@@ -35,6 +36,30 @@ Right-click PowerModeToggle.bat → Run as administrator
 ```
 
 That's it! The script will automatically detect and toggle your power mode.
+
+---
+
+## ⚙️ Setup Instructions
+
+**First-time setup? Follow these steps in order (run each as Administrator):**
+
+### Step 1: Run Diagnostics
+```bash
+Right-click Diagnostics.bat → Run as administrator
+```
+This detects your system's power plans and auto-configures PowerModeToggle.bat
+
+### Step 2: List Available Power Plans
+```bash
+Right-click ListPowerPlans.bat → Run as administrator
+```
+This shows all available power plans on your system
+
+### Step 3: Start Toggling Power Modes
+```bash
+Right-click PowerModeToggle.bat → Run as administrator
+```
+Now you can toggle between power modes!
 
 ---
 
