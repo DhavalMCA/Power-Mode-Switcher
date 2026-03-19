@@ -1,0 +1,139 @@
+# Power Mode Toggle - Quick Reference
+
+## Quick Start
+1. Right-click `PowerModeToggle.bat`
+2. Select **"Run as administrator"**
+3. Watch the toggle happen automatically
+4. Press any key to close the window
+
+---
+
+## Current Power Plans
+
+| Mode | GUID | Best For |
+|------|------|----------|
+| **Balanced** | `381b4222-f694-41f0-9685-ff5bb260df2e` | Daily use |
+| **Ultimate Performance** | `e9a42b02-d5df-448d-aa00-03f14749eb61` | Gaming, editing |
+
+---
+
+## Common Commands (Reference)
+
+```bash
+# Check current active power plan
+powercfg /getactivescheme
+
+# List all power plans
+powercfg /list
+
+# Switch to a specific power plan (replace GUID)
+powercfg /setactive GUID
+
+# Get detailed info about a power plan
+powercfg /query GUID
+```
+
+---
+
+## Troubleshooting Flowchart
+
+```
+Script won't run?
+│
+├─→ "Admin required" error?
+│   └─→ Right-click and "Run as administrator"
+│
+├─→ "Ultimate Performance not found"?
+│   └─→ Let it auto-enable, or enable manually in Settings
+│
+├─→ Mode won't switch?
+│   └─→ Check that you're admin (restart if uncertain)
+│   └─→ Verify GUIDs in the script match your system
+│
+└─→ Still stuck?
+    └─→ Run from Command Prompt for detailed error messages
+```
+
+---
+
+## Check What You're Using
+
+```bash
+# This tells you right now which mode is active
+powercfg /getactivescheme
+```
+
+Expected output:
+```
+(381b4222-f694-41f0-9685-ff5bb260df2e) Balanced
+```
+or
+```
+(e9a42b02-d5df-448d-aa00-03f14749eb61) Ultimate Performance
+```
+
+---
+
+## Desktop Shortcut Setup (with Admin)
+
+**Steps:**
+1. Right-click desktop → New → Shortcut
+2. Enter: `C:\path\to\PowerModeToggle.bat`
+3. Name it: "Toggle Power Mode"
+4. Right-click shortcut → Properties
+5. Click "Advanced"
+6. ✓ Check "Run as administrator"
+7. Click OK → Apply → OK
+
+Now double-click to toggle (admin prompt may appear)
+
+---
+
+## Performance Tips
+
+| Mode | CPU Speed | GPU Speed | When to Use |
+|------|-----------|-----------|-------------|
+| Balanced | Dynamic | Dynamic | Browsing, office work |
+| Ultimate | Maximum | Maximum | Gaming sessions, video rendering |
+
+**Power Consumption**: Ultimate uses ~15-30% more energy
+
+---
+
+## What This Script Does
+
+1. ✓ Checks you're running as admin
+2. ✓ Detects your current power mode
+3. ✓ Enables Ultimate Performance if missing
+4. ✓ Switches to the opposite mode
+5. ✓ Shows you the result
+6. ✓ Keeps log in console
+
+---
+
+## Exit Codes (for advanced users)
+
+- `0` = Success ✓
+- `1` = Not Admin ✗
+- `2` = Can't enable Ultimate Performance ✗
+- `3` = Can't switch modes ✗
+- `4` = Unknown power plan ✗
+
+---
+
+## Need Help?
+
+**See the full documentation**: Open `README.md` in this folder
+
+**Manual power plan change**:
+1. Right-click battery icon → Power settings
+2. Scroll down → Additional power options
+3. Click your desired plan
+
+---
+
+## Version Info
+
+- **Created**: March 2026
+- **Tested**: Windows 10, Windows 11
+- **Status**: Fully functional
