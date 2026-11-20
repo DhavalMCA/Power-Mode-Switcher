@@ -1,0 +1,4 @@
+# Build-time dependencies (packaging the .exe and generating the icon)
+-r requirements.txt
+pyinstaller>=6.0
+pillow>=10.0
